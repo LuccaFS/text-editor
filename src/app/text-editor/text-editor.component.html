@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="text-header">
+
+    <span *ngIf="StyleAlign">
+      <button id="justifyLeft" class="option-button-format" matTooltip="Align Left" (click)="formatText('justifyLeft')">
+        <mat-icon> format_align_left </mat-icon>
+      </button>
+      <button id="justifyCenter" class="option-button-format" matTooltip="Align Center" (click)="formatText('justifyCenter')">
+        <mat-icon> format_align_center </mat-icon>
+      </button>
+      <button id="justifyRight" class="option-button-format" matTooltip="Align Right" (click)="formatText('justifyCenter')">
+        <mat-icon> format_align_right </mat-icon>
+      </button>
+      <button id="justifyFull" class="option-button-format" matTooltip="Align Justify" (click)="formatText('justifyFull')">
+        <mat-icon> format_align_justify </mat-icon>
+      </button>  <b>|</b>
+    </span>
+
+    <span *ngIf="StyleBIU">
+      <button id="bold" class="option-button-format" matTooltip="Bold" (click)="formatText('bold')">
+        <mat-icon> format_bold </mat-icon>
+      </button>
+      <button id="italic" class="option-button-format" matTooltip="Italic" (click)="formatText('italic')">
+        <mat-icon> format_italic </mat-icon>
+      </button>
+      <button id="underline" class="option-button-format" matTooltip="Underline" (click)="formatText('underline')">
+        <mat-icon> format_underlined </mat-icon>
+      </button>  <b>|</b>
+    </span>
+
+
+    <mat-select class="option-header-format">
+      <mat-option *ngFor="let header of headerSizes" [value]="header.value" class="option-header-format-options">
+        {{header.name}}
+      </mat-option>
+    </mat-select>
+
+  </div>
+  <div id="text-input" contenteditable="true">
+  </div>
+</div>
+
